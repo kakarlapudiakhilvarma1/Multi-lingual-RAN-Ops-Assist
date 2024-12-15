@@ -10,5 +10,4 @@ faiss-cpu
 langchain-huggingface
 langchain-groq
 uuid
-langchain-google-genai
-chainlit
+

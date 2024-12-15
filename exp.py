@@ -16,13 +16,13 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 # Load environment variables
 load_dotenv()
 
-image = os.getenv('LOGO_PATH')
+# image = os.getenv('LOGO_PATH')
 
 # Configure page
 st.set_page_config(page_title="NOC Assist RAG Chatbot", page_icon="🔍")
 st.title("RAN Ops Assist 🔍📡")
 st.info('Always follow Quality Points', icon="ℹ️") 
-st.logo(image,size="medium", link=None, icon_image=None)
+# st.logo(image,size="medium", link=None, icon_image=None)
 
 
 with st.sidebar:
@@ -33,9 +33,9 @@ with st.sidebar:
         st.rerun()      
 
 # Google AI API Key input
-# google_api_key = st.text_input("Google AI API Key", type="password")
-os.environ["GEMINI_API_KEY"] = os.getenv('GEMINI_API_KEY')
-google_api_key = os.environ["GEMINI_API_KEY"]
+google_api_key = st.text_input("Google AI API Key", type="password")
+# os.environ["GEMINI_API_KEY"] = os.getenv('GEMINI_API_KEY')
+# google_api_key = os.environ["GEMINI_API_KEY"]
 
 # Embedding and vector store setup
 @st.cache_resource
@@ -44,7 +44,7 @@ def setup_rag_components():
     embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
     
     # PDF loader and document processing
-    path = os.getenv('PDF_PATH')
+    path = "pdf files"
     loader = PyPDFDirectoryLoader(path)
     extracted_docs = loader.load()
     

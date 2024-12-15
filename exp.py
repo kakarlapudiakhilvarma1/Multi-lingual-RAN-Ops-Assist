@@ -13,9 +13,6 @@ from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-# Load environment variables
-load_dotenv()
-
 # image = os.getenv('LOGO_PATH')
 
 # Configure page

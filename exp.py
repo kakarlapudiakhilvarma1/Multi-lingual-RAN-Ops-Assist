@@ -72,7 +72,8 @@ def create_rag_chain(llm, retriever):
                 - Follow the TSDANC format while creating INC.
                 - Mention previous closed INC/CRQ information if applicable.
                 - If there are >= 4 INCs on the same issue within 90 days, highlight the ticket to the SAM-SICC team and provide all relevant details.
-        
+
+Always provide response in the same language in which question was asked. 
         Context: {context}
         Question: {input}
         """
